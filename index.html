@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" crossorigin="anonymous"></script> -->
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -87,7 +87,6 @@
     }
 
     .container-xl {
-      /* border-radius: 0.5rem; */
       background-color: var(--snow-transparent);
       position: relative;
     }
@@ -103,14 +102,11 @@
 
       & .fa-brands,
       .fa-solid {
-        /* font-size: 2.5rem; */
-
         padding: 0.5rem;
       }
 
       & span .fa-brands,
       .fa-solid {
-        /* font-size: 2.5rem; */
         padding: 0 0.2rem;
       }
 
@@ -137,8 +133,6 @@
       span {
         text-align: center;
         margin: 2rem;
-        /* border: 1px dotted;
-          border-radius: 50%; */
       }
 
       span:hover,
@@ -184,11 +178,46 @@
     a {
       color: var(--snow);
     }
+
+    .modal-content {
+      background-color: #f0f0f0;
+    }
+
+    button.close {
+      padding: 0 1.5rem;
+      font-size: 4rem;
+      text-align: right;
+      width: min-content;
+    }
+
+    .btn-success:hover {
+      background-color: hsl(71deg 21.85% 53.84%);
+      border-color: hsl(71deg 21.85% 53.84%);
+    }
+
+    .btn-success:active {
+      background-color: hsl(71deg 21.85% 53.84%);
+      border-color: hsl(71deg 21.85% 53.84%);
+    }
+
+    .btn-success:focus {
+      background-color: hsl(71deg 21.85% 53.84%);
+      border-color: hsl(71deg 21.85% 53.84%);
+    }
+
+    .btn-success {
+      background-color: var(--content-hover);
+      border-color: var(--content-hover);
+    }
+
+    .alert-success {
+      text-align: center;
+      font-size: 2rem;
+    }
   </style>
 </head>
 
 <body>
-
   <div class="wrapper">
 
     <div class="backgroundImage">
@@ -215,16 +244,16 @@
                     <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Сделаем на заказ</a>
+                    <a class="nav-link" href="#constructor">Сделаем на заказ</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Почему гербарий<i class="fa-brands fa-pagelines"></i></a>
+                    <a class="nav-link" href="#why">Почему гербарий<i class="fa-brands fa-pagelines"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Узнайте больше</a>
+                    <a class="nav-link" href="#more">Узнайте больше</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Связаться с нами</a>
+                    <a class="nav-link" href="#contacts">Связаться с нами</a>
                   </li>
                 </ul>
               </div>
@@ -251,35 +280,44 @@
             </picture>
           </div>
           <div class="col-lg-5 d-flex flex-column justify-content-around">
-            <h2>Гербарий на заказ</h2>
+            <h2 id="constructor">Гербарий на заказ</h2>
             <p>Выбирайте сами какой гербарий вы хотите заказать.</p>
 
             <h3>
               <i class="fa-solid fa-ruler-combined fa-sm"></i> <span data-toggle="tooltip" data-placement="right"
-                data-html="true" title="Подсказка по размеру">Размер</span>
+                title="Подсказка по размеру">Размер</span>
             </h3>
             <div class="filter">
-              <span><i class="fa-solid fa-s fa-2xl"></i><br />Малый</span>
-              <span><i class="fa-solid fa-m fa-2xl"></i><br />Средний</span>
-              <span><i class="fa-solid fa-l fa-2xl"></i><br />Большой</span>
+              <span onclick="spanCheck(this)" data-filter-id="11" data-filter-check=""><i
+                  class="fa-solid fa-s fa-2xl"></i><br />Малый</span>
+              <span onclick="spanCheck(this)" data-filter-id="12" data-filter-check=""><i
+                  class="fa-solid fa-m fa-2xl"></i><br />Средний</span>
+              <span onclick="spanCheck(this)" data-filter-id="13" data-filter-check=""><i
+                  class="fa-solid fa-l fa-2xl"></i><br />Большой</span>
             </div>
 
             <h3><i class="fa-solid fa-shapes fa-sm"></i> <span data-toggle="tooltip" data-placement="right"
-                data-html="true" title="Подсказка по форме">Форма</span></h3>
+                title="Подсказка по форме">Форма</span></h3>
             <div class="filter">
-              <span><i class="fa-regular fa-circle fa-2xl"></i><br />Круг</span>
-              <span><i class="fa-regular fa-square-full fa-2xl"></i><br />Углы
+              <span onclick="spanCheck(this)" data-filter-id="21" data-filter-check=""><i
+                  class="fa-regular fa-circle fa-2xl"></i><br />Круг</span>
+              <span onclick="spanCheck(this)" data-filter-id="22" data-filter-check=""><i
+                  class="fa-regular fa-square-full fa-2xl"></i><br />Углы
                 90<sup>&deg</sup></span>
-              <span><i class="fa-solid fa-draw-polygon fa-2xl"></i><br />Прочее</span>
+              <span onclick="spanCheck(this)" data-filter-id="23" data-filter-check=""><i
+                  class="fa-solid fa-draw-polygon fa-2xl"></i><br />Прочее</span>
             </div>
 
             <h3><i class="fa-solid fa-expand fa-sm"></i> <span data-toggle="tooltip" data-placement="right"
-                data-html="true" title="Подсказка по композиции">Композиция</span></h3>
+                title="Подсказка по композиции">Композиция</span></h3>
             <div class="filter">
-              <span><i class="fa-solid fa-arrows-to-dot fa-2xl"></i><br />меньше
+              <span onclick="spanCheck(this)" data-filter-id="31" data-filter-check=""><i
+                  class="fa-solid fa-arrows-to-dot fa-2xl"></i><br />меньше
                 30%</span>
-              <span><i class="fa-solid fa-compress fa-2xl"></i><br />50-80%</span>
-              <span><i class="fa-solid fa-maximize fa-2xl"></i><br />больше
+              <span onclick="spanCheck(this)" data-filter-id="32" data-filter-check=""><i
+                  class="fa-solid fa-compress fa-2xl"></i><br />50-80%</span>
+              <span onclick="spanCheck(this)" data-filter-id="33" data-filter-check=""><i
+                  class="fa-solid fa-maximize fa-2xl"></i><br />больше
                 80%</span>
             </div>
 
@@ -290,8 +328,7 @@
                 гамма</span>
             </h3>
             <div class="filter">
-              <!-- 
-              Для дальнейшей обработки цвет HEX будет получен по id: colorPicker1/2/3_autocomplete.value -->
+              <!-- Для дальнейшей обработки цвет HEX будет получен по id: colorPicker1/2/3_autocomplete.style -->
               <span><input type='text' id='colorPicker1' class="myColorPicker" name="myColorPicker1" /><br />Цвет
                 1</span>
               <span><input type='text' id='colorPicker2' class="myColorPicker" name="myColorPicker2" /><br />Цвет
@@ -315,15 +352,77 @@
               </ul>
             </div> -->
 
-            <button>Заказать гербарий</button>
+            <button onclick="preForm()" data-toggle="modal" data-target="#exampleModal">Заказать гербарий</button>
+
+            <!-- Modal start -->
+            <div class="modal fade" id="exampleModal" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                  <div class="modal-body">
+                    <!-- Form start -->
+                    <form onsubmit="sendForm(this);return false">
+                      <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <span class="material-symbols-outlined form-icon">person_add</span>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control form-control-lg" placeholder="Ваше имя"
+                          onfocus="this.placeholder=''" onblur="this.placeholder='Ваше имя'" minlength="2" required
+                          autocomplete="username" tabindex="1" name="name" />
+                      </div>
+
+                      <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <span class="material-symbols-outlined form-icon">phone</span>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control form-control-lg" placeholder="Телефон для связи"
+                          onfocus="this.placeholder=''" onblur="this.placeholder='Телефон для связи'" minlength="2"
+                          required autocomplete="family-name" tabindex="2" name="lastname" />
+                      </div>
+
+                      <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <span class="material-symbols-outlined form-icon">mail</span>
+                          </div>
+                        </div>
+                        <input type="email" class="form-control form-control-lg" placeholder="Email"
+                          onfocus="this.placeholder=''" onblur="this.placeholder='Email'" minlength="5" required
+                          autocomplete="email" tabindex="3" name="email" />
+                      </div>
+
+                      <div class="form-check mb-4 ml-4">
+                        <input class="form-check-input" type="checkbox" id="autoSizingCheck" required />
+                        <label class="form-check-label" for="autoSizingCheck">Согласие на обработку персональных
+                          данных</label>
+                      </div>
+
+                      <input type="submit" class="btn btn-lg btn-block btn-success" value="Отправить заявку" />
+                    </form>
+                    <!-- Form end -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Modal end -->
+
           </div>
         </div>
 
         <div class="row">
-          <!-- <div class="col-12">2 Галерея работ</div> -->
+          <!-- <div class="col-12">2 Готовые работы, галерея?</div> -->
 
           <div class="col-12">
-            <h2>Почему гербарий<i class="fa-brands fa-pagelines"></i></h2>
+            <h2 id="why">Почему гербарий<i class="fa-brands fa-pagelines"></i></h2>
             <p>Во-первых, это красиво!</p>
             <p>
               Стильный и необычный подарок близкому человеку, коллеге на работе: выгодно отличается от обычных банальных
@@ -340,7 +439,7 @@
             4. Отзывы но не на картах, Авито? Ярмарка Мастеров?
           </div> -->
           <div class="col-12">
-            <h2>Узнайте больше</h2>
+            <h2 id="more">Узнайте больше</h2>
             <div>
               <p>1. Каждый гербарий в рамке под стеклом неповторим, это штучная ручная работа</p>
               <p>2. Можно быстро купить готовые гербарии в стекле на АВИТО и Ярмарке мастеров --ссылка</p>
@@ -352,7 +451,7 @@
             </div>
           </div>
           <div class="col-12">
-            <h2>Связаться с нами</h2>
+            <h2 id="contacts">Связаться с нами</h2>
             <p>Пару строк биография </p>
             <p>Вы можете связаться с нами в телеграме t.me/, whtapp или insta.</p>
           </div>
@@ -367,11 +466,11 @@
           </div>
           <div class="col-sm-4"></div>
           <div class="col-sm-4">
-            <!-- <i class="fa-brands fa-vk fa-3x"></i> -->
             <a href="#"><i class="fa-brands fa-telegram fa-3x"></i></a>
             <a href="#"><i class="fa-brands fa-square-whatsapp fa-3x"></i></a>
             <a href="#"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
             <!-- <i class="fa-brands fa-square-youtube fa-3x"></i>
+            <i class="fa-brands fa-vk fa-3x"></i> 
             <i class="fa-brands fa-square-odnoklassniki fa-3x"></i> -->
           </div>
         </div>
@@ -401,20 +500,6 @@
             </div>
           </div>
 
-          <!-- <div class="col-sm-8">
-            &copy; FRAMEFLORA.RU
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-          </br>
-            Использование материалов сайта только с письменного разрешения правообладателя.
-          </div>
-          <div class="col-sm-4 d-flex justify-content-end">
-            <i class="fa-brands fa-cc-visa"></i>
-            <i class="fa-brands fa-cc-mastercard"></i>
-            <i class="fa-solid fa-ruble-sign"></i>
-            <i class="fa-brands fa-bitcoin"></i>
-          </div> -->
         </div>
       </section>
       <!-- Footer end -->
@@ -429,9 +514,25 @@
     crossorigin="anonymous"></script>
 
   <script>
+    //инициализация подсказок bootstrap
     $(function () {
-      $('[data-toggle="tooltip"]').tooltip() //инициализация подсказок bootstrap
+      $('[data-toggle="tooltip"]').tooltip()
     })
+    //выбранные пользователем значения отмечаются "1" в data-
+    function spanCheck(element) {
+      console.log(element.dataset.filterId);
+      console.log(element.dataset.filterCheck);
+      if (element.dataset.filterCheck == "" || element.dataset.filterCheck == null) {
+        element.style.fontWeight = '700';
+        element.style.color = "red";
+        element.dataset.filterCheck = "1"
+      } else {
+        element.style.fontWeight = '';
+        element.style.color = "";
+        element.dataset.filterCheck = ""
+      }
+    }
+
   </script>
 
   <script src="js/GridColorPicker.js"></script>
@@ -451,6 +552,55 @@
           console.log(selectedColor);
         },
       });
+    }
+  </script>
+
+  <script>
+    //получение выбранных пользователем параметров для отправки с формой
+    let filtersArray = [];
+    function preForm() {
+      let filters = document.getElementsByClassName("filter");
+      for (let i = 0; i < filters.length; i++) {
+
+        let spans = filters[i].children;
+        for (let j = 0; j < spans.length; j++) {
+
+          if (i == 3) {
+            //получение выбранных пользователем цветов из 4-го div.filter
+            let preColor = "colorPicker" + (j + 1) + "_autocomplete";
+            //console.log(document.getElementById(preColor).style.backgroundColor);
+            filtersArray.push(document.getElementById(preColor).style.backgroundColor);
+          } else {
+            //получение параметров из 1-3 div.filter
+            //if (spans[j].dataset.filterCheck == "1") console.log(spans[j].dataset.filterId);
+            if (spans[j].dataset.filterCheck == "1") filtersArray.push(spans[j].dataset.filterId)
+          }
+        }
+      }
+    }
+
+    async function sendForm(form) {
+      //добавление данных из фильтров к данным формы заявки
+      const data = new FormData(form);
+      for (let i = 0; i < filtersArray.length; i++) {
+        data.append('filtres', filtersArray[i]);
+      }
+      //отправка объединенных данных на сервер
+      let response = await fetch("php/sendMail.php", {
+        method: "POST",
+        body: data,
+      });
+      let result = await response.text();
+      if (result == "ok") {
+        document.getElementById('exampleModal').innerHTML = `
+          <div class="alert alert-success" role="alert">
+            <p>Заявка уже отправлена!</p>
+            <p><a href="#" onclick="window.location.reload();" class="alert-link"><u>Нажмите здесь, если хотите сделать ещё одну</u></a></p>
+          </div>
+          `;
+      } else {
+        alert("Неизвестная ошибка");
+      };
     }
 
   </script>
