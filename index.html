@@ -59,6 +59,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: right top;
     }
 
     .wrapper {
@@ -222,8 +223,9 @@
 
     <div class="backgroundImage">
       <picture class="bg-image">
-        <source type="image/webp" srcset="img/bg3.webp?width=768 768w" />
-        <img src="img/bg3.webp" srcset="img/bg3.webp?width=768 768w" loading="lazy" decoding="async" alt=""
+        <source type="image/webp" srcset="img/768bg3.webp 768w, img/992bg3.webp 992w, img/1200bg3.webp 1160w" />
+        <img src="img/1200bg3.jpg" srcset="img/768bg3.jpg 768w, img/992bg3.jpg 992w, img/1200bg3.jpg 1160w"
+          sizes="(max-width: 768px) 738px, (max-width: 992) 952px, 1200px" loading="lazy" decoding="async" alt=""
           role="presentation" />
       </picture>
 
@@ -232,7 +234,7 @@
         <div class="row">
           <div class="col-12">
             <nav class="navbar navbar-expand-lg navbar-dark main-menu">
-              <a class="navbar-brand" href="index.html"><img src="img/logo-Photoroom.png" alt=""
+              <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""
                   style="max-width: 150px; width: 100%" /></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
@@ -274,9 +276,8 @@
             </p>
 
             <picture>
-              <source type="image/webp" />
-              <img src="img/slider01.webp" sizes="(max-width: 800px) 100vw, 50vw" style="width: 100%"
-                fetchpriority="high" alt="Герабрий в рамке под стеклом" />
+              <source type="image/webp" srcset="img/slider01.webp" />
+              <img src="img/slider01.jpg" style="width: 100%" fetchpriority="high" alt="Герабрий в рамке под стеклом" />
             </picture>
           </div>
           <div class="col-lg-5 d-flex flex-column justify-content-around">
@@ -452,7 +453,8 @@
           </div>
           <div class="col-12">
             <h2 id="contacts">Связаться с нами</h2>
-            <p>Пару строк биография </p>
+            <p>Привет, я - Анна. Я люблю создавать изделия руками и очень люблю лето, поэтому занимаюсь дизайном и
+              изготовлением гербариев. Живу и работаю в Москве. </p>
             <p>Вы можете связаться с нами в телеграме t.me/, whtapp или insta.</p>
           </div>
         </div>
